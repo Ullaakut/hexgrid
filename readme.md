@@ -3,11 +3,6 @@
 This is a GO (Golang) library used to handle regular hexagons.
 It's based on the algorithms described at http://www.redblobgames.com/grids/hexagons/implementation.html
 
-## Installation
-```bash
-    go get github.com/ishmulyan/hexgrid
-```
-
 ## Usage
 #### Importing
 
