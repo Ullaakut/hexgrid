@@ -6,30 +6,30 @@ import (
 )
 
 // Direction describes a direction.
-type Direction int
+type Direction string
 
 const (
 	// DirectionSE Southeast direction.
-	DirectionSE = iota
+	DirectionSE Direction = "SE"
 	// DirectionNE Northeast direction.
-	DirectionNE
+	DirectionNE = "NE"
 	// DirectionN North direction.
-	DirectionN
+	DirectionN = "N"
 	// DirectionNW Northwest direction.
-	DirectionNW
+	DirectionNW = "NW"
 	// DirectionSW Southwest direction.
-	DirectionSW
+	DirectionSW = "SW"
 	// DirectionS South direction.
-	DirectionS
+	DirectionS = "S"
 )
 
-var directions = []Hex{
-	NewHex(1, 0),
-	NewHex(1, -1),
-	NewHex(0, -1),
-	NewHex(-1, 0),
-	NewHex(-1, +1),
-	NewHex(0, +1),
+var directions = map[Direction]Hex{
+	DirectionSE: NewHex(1, 0),
+	DirectionNE: NewHex(1, -1),
+	DirectionN:  NewHex(0, -1),
+	DirectionNW: NewHex(-1, 0),
+	DirectionSW: NewHex(-1, +1),
+	DirectionS:  NewHex(0, +1),
 }
 
 // Hex describes a regular hexagon with Cube Coordinates (although the S coordinate is computed on the constructor)
