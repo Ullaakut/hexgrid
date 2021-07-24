@@ -23,7 +23,7 @@ const (
 	DirectionS = "S"
 )
 
-var directions = map[Direction]Hex{
+var Directions = map[Direction]Hex{
 	DirectionSE: NewHex(1, 0),
 	DirectionNE: NewHex(1, -1),
 	DirectionN:  NewHex(0, -1),
@@ -136,7 +136,7 @@ func Distance(a, b Hex) int {
 
 // Neighbor returns the neighbor hexagon at a certain direction
 func Neighbor(h Hex, direction Direction) Hex {
-	directionOffset := directions[direction]
+	directionOffset := Directions[direction]
 	return NewHex(h.Q+directionOffset.Q, h.R+directionOffset.R)
 }
 
